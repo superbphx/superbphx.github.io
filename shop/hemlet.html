@@ -85,154 +85,58 @@
                                "Platform": window.IOS_APP ? "iOS" : (navigator.userAgent.match(/Android/i) != null ? "Android" : "Web")
                                });
              </script>
-        <style>
-            * {box-sizing: border-box}
-            body {font-family: Verdana, sans-serif; margin:0}
-            .mySlides {display: none}
-            img {vertical-align: middle;}
-            
-            /* Slideshow container */
-            .slideshow-container {
-                max-width: 1000px;
-                position: relative;
-                margin: auto;
-            }
-        
-        /* Next & previous buttons */
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            width: auto;
-            padding: 16px;
-            margin-top: -22px;
-            color: white;
-            font-weight: bold;
-            font-size: 18px;
-            transition: 0.6s ease;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
-        }
-        
-        /* Position the "next button" to the right */
-        .next {
-            right: 0;
-            border-radius: 3px 0 0 3px;
-        }
-        
-        /* On hover, add a black background color with a little bit see-through */
-        .prev:hover, .next:hover {
-            background-color: rgba(0,0,0,0.8);
-        }
-        
-        /* Caption text */
-        .text {
-            color: #f2f2f2;
-            font-size: 15px;
-            padding: 8px 12px;
-            position: absolute;
-            bottom: 8px;
-            width: 100%;
-            text-align: center;
-        }
-        
-        /* Number text (1/3 etc) */
-        .numbertext {
-            color: #f2f2f2;
-            font-size: 12px;
-            padding: 8px 12px;
-            position: absolute;
-            top: 0;
-        }
-        
-        /* The dots/bullets/indicators */
-        .dot {
-            cursor: pointer;
-            height: 15px;
-            width: 15px;
-            margin: 0 2px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.6s ease;
-        }
-        
-        .active, .dot:hover {
-            background-color: #717171;
-        }
-        
-        /* Fading animation */
-        .fade {
-            -webkit-animation-name: fade;
-            -webkit-animation-duration: 1.5s;
-            animation-name: fade;
-            animation-duration: 1.5s;
-        }
-        
-        @-webkit-keyframes fade {
-            from {opacity: .4}
-            to {opacity: 1}
-        }
-        
-        @keyframes fade {
-            from {opacity: .4}
-            to {opacity: 1}
-        }
-        
-        /* On smaller screens, decrease text size */
-        @media only screen and (max-width: 300px) {
-            .prev, .next,.text {font-size: 11px}
-        }
-        </style>
     </head>
     
-    <body class=" products view-all   us">
+    <body class=" products show us">
         <header id="header">
             <hgroup>
                 <img class="logo" style = "width:10em" src="/images/superb.png"/>
                 <time data-timezone-offset="-18000"><b>12/16/2018 20:06pm</b> <span id="time-zone-name">PHX</span></time>
             </hgroup>
         </header>
-        <div id="wrap" style="opacity: 1;">
-            <div class="slideshow-container">
-                
-                <div class="mySlides fade">
-                    <img src="lookbook/DSC_0092.JPG" style="width:100%">
+        <div id="wrap">
+            <div id="container" style="opacity: 1;">
+                <article itemscope="itemscope" itemtype="http://schema.org/Product">
+                    <figure><img itemprop="image" id="img-main" alt="GORE-TEX 700-Fill Down Parka" src="helmet.JPG" height="450" width="450">
+                        <div id="zoom-lens"></div>
+                        <div data-background-image="helmet.JPG" id="zoom-holder" style="background-image: url('helmet.JPG'); background-position: 0 0; background-repeat:  no-repeat;"></div>
+                        </figure>
+                </article>
+                <div data-style-limited="true" data-style-limited-with-count="0" id="details">
+                    <h1 class="protect" data-category="Jackets" data-ino="FW18J70" data-rd="12/13/2018" data-rw="17FW18" itemprop="name">SUPERB HELMET</h1>
+                    <p class="price" itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer"><span data-currency="USD" itemprop="price">$650</span></p>
+                    <div id="cctrl">
+                        <form>
+                            <fieldset id="add-remove-buttons"><input type="submit" name="commit" value="add to cart" class="button"><a class="button continue" href="/shop">keep shopping</a></fieldset>
+                        </form>
+                    </div>
+                    <script id="cart-controls-add" type="text/x-nano-tmpl"></script>
+                    <script id="cart-controls-remove" type="text/x-nano-tmpl">
+                        <form class="delete" id="cart-remove" action="/shop/172050/remove" accept-charset="UTF-8" data-remote="true" method="post">
+                        <input name="utf8" type="hidden" value="&#x2713;" />
+                        <input type="hidden" name="_method" value="delete" />
+                        <input type="hidden" name="size" id="size" value="{size_id}" />
+                        <fieldset><b class="button in-cart">in cart</b><a class="next" href="/shop/jackets/nsnbuk7ri">next jacket &gt;</a></fieldset>
+                        <fieldset id="add-remove-buttons">
+                        <input type="submit" name="commit" value="remove" class="button remove" /><a class="button continue" href="/shop">keep shopping</a></fieldset>
+                        </form>
+                        </script>
+                    <script id="cart-controls-sold-out" type="text/x-nano-tmpl">
+                        <form>
+                        <fieldset><a class="next" href="/shop/jackets/nsnbuk7ri">next jacket &gt;</a></fieldset>
+                        <fieldset id="add-remove-buttons"><b class="button sold-out">sold out</b><a class="button continue" href="/shop">keep shopping</a></fieldset>
+                        </form>
+                        </script>
+                    <script id="cart-controls-limited" type="text/x-nano-tmpl">
+                        <form>
+                        <fieldset><b class="warning">limited to 1 style per product</b></fieldset>
+                        <fieldset><b class="button disabled">add to cart</b><a class="button continue" href="/shop">keep shopping</a></fieldset>
+                        </form>
+                        </script>
                 </div>
-                
-                <div class="mySlides fade">
-                    <img src="lookbook/IMG_0492.jpeg" style="width:100%">
+                <div class="hninv">
+                    <div class="sold-out"></div>
                 </div>
-                
-                <div class="mySlides fade">
-                    <img src="lookbook/DSC_0087.JPG" style="width:100%">
-                </div>
-                
-                <div class="mySlides fade">
-                    <img src="lookbook/DSC_0104.JPG" style="width:100%">
-                </div>
-                
-                <div class="mySlides fade">
-                    <img src="lookbook/DSC_0095.JPG" style="width:100%">
-                </div>
-                
-                <div class="mySlides fade">
-                    <img src="lookbook/DSC_0101.JPG" style="width:100%">
-                </div>
-                
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                
-            </div>
-            <br>
-            
-            <div style="text-align:center">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-                <span class="dot" onclick="currentSlide(4)"></span>
-                <span class="dot" onclick="currentSlide(5)"></span>
-                <span class="dot" onclick="currentSlide(6)"></span>
             </div>
         </div>
         <footer id="nav">
@@ -243,34 +147,6 @@
                 </ul>
             </nav>
         </footer>
-        <script>
-            var slideIndex = 1;
-            showSlides(slideIndex);
-            
-            function plusSlides(n) {
-                showSlides(slideIndex += n);
-            }
-        
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-        
-        function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";
-            dots[slideIndex-1].className += " active";
-        }
-        </script>
         <script>
             if (typeof(fb_param) == "undefined") {
                 var fb_param = {};
@@ -311,3 +187,7 @@
     </body>
     
 </html>
+
+
+
+
